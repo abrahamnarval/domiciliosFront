@@ -9,14 +9,22 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  usuario:any;
 
-  constructor(private Auth: AuthService, private router: Router) {
-    this.usuario = this.Auth.getUser();
-   }
+
+  constructor(private authService: AuthService, private router: Router) {
+  }
+
+  get user():any {
+    return this.authService.user;
+  }
 
   ngOnInit() {
-    this.usuario = this.Auth.getUser();
+    
+  }
+
+  cerrarSesion(){
+    localStorage.removeItem('userToken');
+    this.authService.setUser(null);
   }
 
 }
