@@ -22,9 +22,19 @@ export class NavbarComponent implements OnInit {
     
   }
 
+
+  goDashboard(){
+    if(this.user.rol){
+      this.router.navigate(['/admin'])
+    }else{
+      
+    }
+  }
+
   cerrarSesion(){
     localStorage.removeItem('userToken');
     this.authService.setUser(null);
+    this.router.navigate(['/home'])
   }
 
 }
