@@ -5,12 +5,19 @@ import { environment } from '../../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class ProductService {
+
+export class DomicileService {
 
   constructor(private http: HttpClient) { }
 
-  getProductDetails(){
+  getDomicilesDetails(){
     //get these details to API server
-    return this.http.get(`${environment.hostApi}/getProducts`);
+    return this.http.get(`${environment.hostApi}/getDomiciles`);
   }
+
+  getDomicilesByUserId(userId:any){
+    //get these details to API server
+    return this.http.get(`${environment.hostApi}/getDomicilesByUserId/${userId}`);
+  }
+
 }
