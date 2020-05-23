@@ -1,17 +1,18 @@
-<div class="list-group">
-  <table class="table">
+<div class="row">
+    <table class="table table-striped">
     <thead class="thead-dark">
       <tr>
-        <th scope="col">Usuario</th>
-        <th scope="col">Factura</th>
-        <th scope="col">Fecha de entrega</th>
-        <th scope="col">Estado</th>
-        <th scope="col">Cambiar estado</th>
+        <th>Usuario</th>
+        <th>Factura</th>
+        <th>Fecha de entrega</th>
+        <th>Estado</th>
+        <th>Cambiar estado</th>
       </tr>
     </thead>
+
     <tbody>
-      <tr>
-        <td scope="row">Nombre Usuario</td>
+      <tr *ngFor="let data of domicilios; let i=index">
+        <td>e</td>
         <td>Factura</td>
         <td>Date</td>
         <td>En proceso</td>
