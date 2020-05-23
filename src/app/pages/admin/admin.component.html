@@ -6,7 +6,7 @@
         <th>Factura</th>
         <th>Fecha de entrega</th>
         <th>Estado</th>
-        <th>Cambiar estado</th>
+        <th>Acciones</th>
       </tr>
     </thead>
 
@@ -16,7 +16,10 @@
         <td>{{data.codigo}}</td>
         <td>{{data.fechaEntrega | date}}</td>
         <td>{{data.Status.name}}</td>
-        <td><button type="button" name="button" class="btn btn-primary">Cambiar estado</button></td>
+        <td>
+          <button *ngIf="data.Status.id == 1" type="button" name="button" class="btn btn-primary">Entregar</button>
+          <button *ngIf="data.Status.id == 2" type="button" name="button" class="btn btn-primary">Completar</button>
+        </td>
       </tr>
     </tbody>
   </table>
