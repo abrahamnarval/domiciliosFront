@@ -50,7 +50,7 @@ import { PaymentsuccessComponent } from './pages/paymentsuccess/paymentsuccess.c
     ]),
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [HttpClientModule],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
