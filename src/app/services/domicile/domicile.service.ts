@@ -20,4 +20,11 @@ export class DomicileService {
     return this.http.get(`${environment.hostApi}/getDomicilesByUserId/${userId}`);
   }
 
+  updateDomicile(domicileId:number, statusId: number){
+    return this.http.put(`${environment.hostApi}/updateDomicile`, {
+      id: domicileId,
+      status_id: statusId
+    })
+  }
+
 }
