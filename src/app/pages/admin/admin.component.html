@@ -1,3 +1,7 @@
+<div>
+  <h3>Domicilios</h3>
+</div>
+<br>
 <div class="row">
     <table class="table table-striped">
     <thead class="thead-dark">
@@ -17,8 +21,8 @@
         <td>{{data.fechaEntrega | date}}</td>
         <td>{{data.Status.name}}</td>
         <td>
-          <button *ngIf="data.Status.id == 1" type="button" name="button" class="btn btn-primary">Entregar</button>
-          <button *ngIf="data.Status.id == 2" type="button" name="button" class="btn btn-primary">Completar</button>
+          <button *ngIf="data.Status.id == 1" type="button" name="button" class="acciones btn btn-primary">Entregar</button>
+          <button *ngIf="data.Status.id == 2" type="button" name="button" class="acciones btn btn-primary">Completar</button>
         </td>
       </tr>
     </tbody>
