@@ -11,11 +11,11 @@
     </thead>
 
     <tbody>
-      <tr *ngFor="let data of domicilios; let i=index">
-        <td>e</td>
-        <td>Factura</td>
-        <td>Date</td>
-        <td>En proceso</td>
+      <tr *ngFor="let data of domiciles; let i=index">
+        <td>{{data.User.name}}</td>
+        <td>{{data.codigo}}</td>
+        <td>{{data.fechaEntrega | date}}</td>
+        <td>{{data.Status.name}}</td>
         <td><button type="button" name="button" class="btn btn-primary">Cambiar estado</button></td>
       </tr>
     </tbody>
