@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgxSpinnerModule } from "ngx-spinner";
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -12,6 +12,7 @@ import { AdminComponent } from './pages/admin/admin.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ListItemProductComponent } from './components/list-item-product/list-item-product.component';
+import { PaymentsuccessComponent } from './pages/paymentsuccess/paymentsuccess.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +22,14 @@ import { ListItemProductComponent } from './components/list-item-product/list-it
     AdminComponent,
     NavbarComponent,
     HomeComponent,
-    ListItemProductComponent
+    ListItemProductComponent,
+    PaymentsuccessComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    NgxSpinnerModule,
     RouterModule.forRoot([
       {
         path: 'login',
@@ -38,6 +41,7 @@ import { ListItemProductComponent } from './components/list-item-product/list-it
       }
     ])
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent]
 })

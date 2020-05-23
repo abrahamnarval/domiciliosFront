@@ -21,13 +21,12 @@ export class LoginComponent implements OnInit {
     const email = target.querySelector('#email').value
     const password = target.querySelector('#password').value
 
-    this.Auth.getUserDetails(email, password).subscribe(data => {
-      if(data){
-        let dataFormat = JSON.stringify(data)
-        let dataParsed = JSON.parse(dataFormat)
-        this.Auth.decodeToken(dataParsed.token);
-        localStorage.setItem('userToken', dataParsed.token);
-        this.router.navigate(['/admin'])
+    this.Auth.getUserDetails(email, password).subscribe(res => {
+      if(res){
+        const data:any = res;
+        this.Auth.decodeToken(data.token);
+        localStorage.setItem('userToken', data.token);
+        this.router.navigate(['/home'])
       }
     }, (error) => {
       console.log(error)

@@ -14,9 +14,11 @@
     </ul>
     <span class="navbar-text">
       <button *ngIf="!usuario" type="submit" class="btn btn-primary text-center" [routerLink]="['login']">Login</button>
-      <div *ngIf="usuario">
-        <p>{{usuario.name}}</p>
-        <button class="btn btn-primary text-center">Logout</button>
+      <div class="row" *ngIf="usuario" style="margin-right: 20px;">
+        <div class="col-6" style="display: flex; align-items: center;">
+          <p style="margin: 0px">{{usuario.name}}</p>
+        </div>
+        <button class="btn btn-primary text-center col-6">Logout</button>
       </div>
     </span>
   </div>
