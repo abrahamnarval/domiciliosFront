@@ -2,14 +2,21 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import jwt_decode from 'jwt-decode';
+import { Subject } from 'rxjs';
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  usuario: any;
+  user: any;
+  userChange: Subject<any> = new Subject<any>();
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+    this.userChange.subscribe((value) => {
+      this.user = value;
+    });
+  }
 
   getUserDetails( email:string, password:string){
     //post these details to API server
@@ -21,17 +28,13 @@ export class AuthService {
     })*/
   }
 
-  setUser(usuario:any){
-    this.usuario = usuario;
-  }
-
-  getUser(){
-    return this.usuario
+  setUser(user:any){
+    this.userChange.next(user);
   }
 
   decodeToken(token:any){
-    let usuario = jwt_decode(token);
-    this.setUser(usuario);
+    const user = jwt_decode(token);
+    this.setUser(user);
   }
 
 }
