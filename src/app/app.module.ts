@@ -10,6 +10,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { HomeComponent } from './pages/home/home.component';
+import { ListItemProductComponent } from './components/list-item-product/list-item-product.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     LoginComponent,
     ModalComponent,
     AdminComponent,
-    NavbarComponent
+    NavbarComponent,
+    HomeComponent,
+    ListItemProductComponent
   ],
   imports: [
     BrowserModule,

@@ -17,9 +17,9 @@ export class AppComponent {
     const userToken = localStorage.getItem('userToken');
     if(userToken){
       this.Auth.decodeToken(userToken);
-      this.router.navigate(['/admin'])
+      // this.router.navigate(['/admin'])
     }else{
-      this.router.navigate(['/login'])
+      // this.router.navigate(['/login'])
     }
   }
 

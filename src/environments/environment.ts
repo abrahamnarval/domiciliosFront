@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  hostApi: 'https://tallerfinalapi.herokuapp.com/api'
+  //hostApi: 'https://tallerfinalapi.herokuapp.com/api'
+  hostApi: 'http://localhost:3001/api'
 };
 
 /*
