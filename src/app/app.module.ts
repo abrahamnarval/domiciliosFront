@@ -38,8 +38,16 @@ import { PaymentsuccessComponent } from './pages/paymentsuccess/paymentsuccess.c
       {
         path: 'admin',
         component: AdminComponent
+      },
+      {
+        path: 'home', 
+        component: HomeComponent
+      },
+      {
+        path: 'paymentsuccess', 
+        component: PaymentsuccessComponent
       }
-    ])
+    ]),
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
