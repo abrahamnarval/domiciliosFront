@@ -12,7 +12,7 @@ export class AuthService {
   user: any;
   userChange: Subject<any> = new Subject<any>();
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
     this.userChange.subscribe((value) => {
       this.user = value;
     });
