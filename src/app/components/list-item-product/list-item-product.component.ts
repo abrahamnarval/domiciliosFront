@@ -29,7 +29,7 @@ export class ListItemProductComponent implements OnInit {
 
   comprar(product:any){
 
-    const user = this.authService.getUser();
+    const user = this.authService.user;
     if(!user){
       this.router.navigate(['/login'])
     }
