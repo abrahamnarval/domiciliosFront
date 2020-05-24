@@ -11,5 +11,4 @@ export class PaymentsuccessComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

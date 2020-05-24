@@ -26,7 +26,12 @@ export class LoginComponent implements OnInit {
         const data:any = res;
         this.authService.decodeToken(data.token);
         localStorage.setItem('userToken', data.token);
-        this.router.navigate(['/home'])
+        const user = this.authService.user;
+        if(user.rol === "admin"){
+          this.router.navigate(['/admin'])
+        }else{
+          this.router.navigate(['/home'])
+        }
       }
     }, (error) => {
       console.log(error)
