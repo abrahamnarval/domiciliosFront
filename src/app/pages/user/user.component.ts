@@ -14,11 +14,27 @@ export class UserComponent implements OnInit {
   }
 
   ngOnInit(): void { 
+    this.getDomiciles();
+  }
+
+  cancelDomicile(domicile:any){
+    this.domicileService.updateDomicile(domicile.id, 4).subscribe(res => {
+      if(res){
+        console.log(res);
+        this.getDomiciles();
+      }
+    }, (error) => {
+      console.log(error)
+      
+    })
+    console.log(domicile);
+  }
+
+  getDomiciles(){
     const user = this.authService.user;
     this.domicileService.getDomicilesByUserId(user.id).subscribe(data => {
       if(data){
         this.domiciles = data;
-        console.log(data);
       }
     })
   }
