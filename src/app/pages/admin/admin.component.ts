@@ -8,17 +8,17 @@ import { DomicileService } from 'src/app/services/domicile/domicile.service';
 export class AdminComponent implements OnInit {
 
   domiciles:any;
-  constructor(private domicileService: DomicileService) { 
+  constructor(private domicileService: DomicileService) {
   }
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
     this.domicileService.getDomicilesDetails().subscribe(data => {
       if(data){
         this.domiciles = data;
         console.log(data);
       }
     })
-    
+
   }
 
 }
