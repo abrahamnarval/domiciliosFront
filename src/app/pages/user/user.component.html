@@ -1,0 +1,30 @@
+<div>
+    <h3>Mis Domicilios</h3>
+  </div>
+  <br>
+  <div class="row">
+      <table class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>Usuario</th>
+          <th>Factura</th>
+          <th>Fecha de entrega</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+  
+      <tbody>
+        <tr *ngFor="let data of domiciles; let i=index">
+          <td>{{data.User.name}}</td>
+          <td>{{data.codigo}}</td>
+          <td>{{data.fechaEntrega | date}}</td>
+          <td>{{data.Status.name}}</td>
+          <td>
+            <button (click)="cancelDomicile(data)" *ngIf="data.Status.id != 3 && data.Status.id != 4" type="button" name="button" class="acciones btn btn-danger">Cancelar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

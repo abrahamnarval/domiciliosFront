@@ -27,7 +27,7 @@ export class NavbarComponent implements OnInit {
     if(this.user.rol){
       this.router.navigate(['/admin'])
     }else{
-      
+      this.router.navigate(['/user'])
     }
   }
 

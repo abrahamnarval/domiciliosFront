@@ -1,21 +1,29 @@
-<div class="list-group">
-  <table class="table">
+<div>
+  <h3>Domicilios</h3>
+</div>
+<br>
+<div class="row">
+    <table class="table table-striped">
     <thead class="thead-dark">
       <tr>
-        <th scope="col">Usuario</th>
-        <th scope="col">Factura</th>
-        <th scope="col">Fecha de entrega</th>
-        <th scope="col">Estado</th>
-        <th scope="col">Cambiar estado</th>
+        <th>Usuario</th>
+        <th>Factura</th>
+        <th>Fecha de entrega</th>
+        <th>Estado</th>
+        <th>Acciones</th>
       </tr>
     </thead>
+
     <tbody>
-      <tr>
-        <td scope="row">Nombre Usuario</td>
-        <td>Factura</td>
-        <td>Date</td>
-        <td>En proceso</td>
-        <td><button type="button" name="button" class="btn btn-primary">Cambiar estado</button></td>
+      <tr *ngFor="let data of domiciles; let i=index">
+        <td>{{data.User.name}}</td>
+        <td>{{data.codigo}}</td>
+        <td>{{data.fechaEntrega | date}}</td>
+        <td>{{data.Status.name}}</td>
+        <td>
+          <button (click)="handleDomicile(data, 2)" *ngIf="data.Status.id == 1" type="button" name="button" class="acciones btn btn-primary">Entregar</button>
+          <button (click)="handleDomicile(data, 3)" *ngIf="data.Status.id == 2" type="button" name="button" class="acciones btn btn-primary">Completar</button>
+        </td>
       </tr>
     </tbody>
   </table>

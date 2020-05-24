@@ -12,13 +12,29 @@ export class AdminComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getDomiciles();
+  }
+
+  handleDomicile(domicile:any, statusID:any){
+    this.domicileService.updateDomicile(domicile.id, statusID).subscribe(res => {
+      if(res){
+        console.log(res);
+        this.getDomiciles();
+      }
+    }, (error) => {
+      console.log(error)
+
+    })
+    console.log(domicile);
+  }
+
+  getDomiciles(){
     this.domicileService.getDomicilesDetails().subscribe(data => {
       if(data){
         this.domiciles = data;
         console.log(data);
       }
     })
-
   }
 
 }
