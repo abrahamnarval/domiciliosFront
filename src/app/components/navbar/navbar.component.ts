@@ -24,7 +24,7 @@ export class NavbarComponent implements OnInit {
 
 
   goDashboard(){
-    if(this.user.rol){
+    if(this.user.rol === "admin"){
       this.router.navigate(['/admin'])
     }else{
       this.router.navigate(['/user'])
