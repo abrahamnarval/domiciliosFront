@@ -13,13 +13,13 @@
       <button *ngIf="!user" type="submit" class="btn btn-primary text-center" [routerLink]="['login']">Login</button>
       <div class="row" *ngIf="user" style="margin-right: 20px;">
         <div class="btn-group dropleft">
-          <button type="button" class="btn dropdown-toggle btn-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <button id="buttonToggle" type="button" class="btn dropdown-toggle btn-secondary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             {{user.name}}
           </button>
           <div class="dropdown-menu">
-            <button class="dropdown-item" (click)="goDashboard()">Domicilios</button>
+            <button id="buttonDomicilios" class="dropdown-item" (click)="goDashboard()">Domicilios</button>
             <div class="dropdown-divider"></div>
-            <button class="dropdown-item" (click)="cerrarSesion()">Cerrar sesión</button>
+            <button id="buttonLogout" class="dropdown-item" (click)="cerrarSesion()">Cerrar sesión</button>
           </div>
         </div>
       </div>
